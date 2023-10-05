@@ -19,4 +19,4 @@
 
 # PLang Extension
 
-This is a VS code extension that provides syntax highlighting and code snippets for the [P programming language](https://github.com/p-programming-language/p).
+This is a VS code extension that provides syntax highlighting and code snippets for the [P programming language](https://github.com/p-programming-language/plang).
