@@ -1,0 +1,11 @@
+{
+	"Function Definition": {
+		"prefix": [ "fn" ],
+		"description": "Creates a P function definition",
+		"body": [
+      "${1:type} fn ${2:function_name}(${4}) {",
+      "\t${5}",
+      "}"
+		]
+	}
+}

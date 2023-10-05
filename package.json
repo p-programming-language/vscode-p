@@ -1,0 +1,44 @@
+{
+  "name": "vscode-p",
+  "publisher": "plang",
+  "displayName": "P Language",
+  "description": "Provides syntax highlighting and code snippets for the P programming language.",
+  "version": "0.1.0",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.7.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "url": "https://github.com/p-programming-language/vscode-p"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "p",
+        "aliases": ["P", "p"],
+        "extensions": [".p"],
+        "icon": {
+          "light": "./assets/icon.png",
+          "dark": "./assets/icon.png"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "p",
+        "scopeName": "source.p",
+        "path": "./syntaxes/p.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "p",
+        "path": "./snippets/p.json"
+      }
+    ]
+  }
+}

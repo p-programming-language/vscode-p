@@ -1,0 +1,336 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "P",
+	"fileTypes": ["p"],
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#multiline-strings"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#numerics"
+		},
+		{
+			"include": "#object-types"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+    "generics": {
+			"begin": "<",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.bracket.angle.p"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.bracket.angle.p"
+				}
+			},
+			"patterns": [
+				{
+					"match": "\\b(extends|super)\\b",
+					"name": "storage.modifier.$1.p"
+				},
+				{
+					"match": "(?<!\\.)([a-zA-Z$_][a-zA-Z0-9$_]*)(?=\\s*<)",
+					"captures": {
+						"1": {
+							"name": "storage.type.p"
+						}
+					}
+				},
+				{
+					"match": "[a-zA-Z$_][a-zA-Z0-9$_]*",
+					"name": "storage.type.generic.p"
+				},
+				{
+					"match": "\\?",
+					"name": "storage.type.generic.wildcard.p"
+				},
+				{
+					"match": "&",
+					"name": "punctuation.separator.types.p"
+				},
+				{
+					"match": ",",
+					"name": "punctuation.separator.delimiter.p"
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.separator.period.p"
+				},
+				{
+					"include": "#generics"
+				}
+			]
+		},
+    "object-types": {
+			"patterns": [
+				{
+          "name": "entity.name.class",
+          "match": "\\b([A-Z_][a-z_]*)+\\(?\\b"
+        }
+			]
+		},
+		"comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-hash.p",
+          "match": "##.*$"
+        },
+        {
+          "name": "comment.block",
+          "begin": "#:",
+          "end": ":#"
+        }
+      ]
+    },
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.p",
+					"match": "\\b(and|or|not|if|unless|else|while|until|break|next|mut|return|fn)\\b"
+				},
+				{
+          "name": "keyword.p",
+          "match": "\\b(enum|class|interface|mixin|public|protected|static)\\b"
+        },
+				{
+          "name": "keyword.type.p",
+          "match": "\\b(type|int|float|string|bool|null|undefined|any|void)\\b"
+        },
+        {
+          "name": "keyword.other.p",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "entity.name.tag",
+          "match": "\\b(null, undefined)\\b"
+        }
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.p",
+			"begin": "\"|'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.p"
+				}
+			},
+			"end": "(\"|')|((?:[^\\\\\\n])$)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.end.p"
+				},
+				"2": {
+					"name": "invalid.illegal.newline.p"
+				}
+			},
+			"patterns": [
+				{
+					"name": "constant.character.escape.p",
+					"match": "\\\\."
+				},
+				{
+          "name": "string.interpolated.p",
+          "begin": "%\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.begin.p"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.end.p"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+						{
+              "include": "#multiline-strings"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#characters"
+            },
+            {
+              "include": "#numerics"
+            },
+						{
+              "include": "#object-types"
+            },
+						{
+							"include": "#functions"
+						},
+            {
+              "include": "#identifiers"
+            }
+          ]
+        }
+			]
+		},
+		"multiline-strings": {
+			"name": "string.other.p",
+			"begin": "\\%(\\(|\\[)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.p"
+				}
+			},
+			"end": "\\)|\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.p"
+				}
+			},
+			"patterns": [
+				{
+					"name": "constant.character.escape.p",
+					"match": "\\\\."
+				},
+				{
+          "name": "string.interpolated.p",
+          "begin": "%\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.begin.p"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.interpolation.end.p"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+						{
+              "include": "#multiline-strings"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#characters"
+            },
+            {
+              "include": "#numerics"
+            },
+						{
+              "include": "#object-types"
+            },
+						{
+							"include": "#functions"
+						},
+            {
+              "include": "#identifiers"
+            }
+          ]
+        }
+			]
+		},
+		"numerics": {
+			"name": "constant.numeric.p",
+			"patterns": [
+				{
+					"name": "constant.numeric.p",
+					"match": "\\b(0[b][01]+|0[x][0-9a-fA-F]+|0[oO][0-7]+|\\d+(\\.\\d+)?)\\b"
+				}
+			]
+		},
+		"functions": {
+      "patterns": [
+				{
+					"name": "meta.function.p",
+					"match": "\\b(fn)\\s+([\\_a-zA-Z][\\_\\$a-zA-Z0-9]+)",
+					"captures": {
+						"0": {
+							"name": "keyword.control.p"
+						},
+						"1": {
+							"name": "entity.name.function.p"
+						}
+					}
+				},
+        {
+          "name": "meta.function-call.p",
+          "match": "\\b((\\_|[a-zA-Z])([a-zA-Z0-9\\_\\$]+))\\(",
+          "captures": {
+            "0": {
+              "name": "entity.name.function.p"
+            }
+          }
+        },
+				{
+					"name": "support.function",
+					"match": "\\b(println|readln|eval)\\b"
+				}
+      ]
+    },
+		"identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.p",
+          "match": "\\b([\\w\\_\\$]+)"
+        },
+				{
+					"match": "(\\{\\{|\\}\\})",
+					"name": "keyword.operator.brackets.p"
+				},
+        {
+					"match": "(\\.|::)",
+					"name": "keyword.operator.access.p"
+				},
+        {
+					"match": "(\\-|\\+|\\*|\\/|\\^|\\%)",
+					"name": "keyword.operator.arithmetic.p"
+				},
+				{
+					"match": "(=|\\-=|\\+=|\\*=|\\/=|\\^=|\\%=)",
+					"name": "keyword.operator.assignment.p"
+				},
+				{
+					"match": "(==|<=|>=|!=|<|>)",
+					"name": "keyword.operator.comparison.p"
+				},
+				{
+					"match": "(!|&|[|]|~)",
+					"name": "keyword.operator.logical.p"
+				}
+      ]
+    }
+	},
+	"scopeName": "source.p"
+}
