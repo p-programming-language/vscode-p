@@ -3,7 +3,7 @@
   "publisher": "plang",
   "displayName": "P Language",
   "description": "Provides syntax highlighting and code snippets for the P programming language.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.7.0"
@@ -18,8 +18,13 @@
     "languages": [
       {
         "id": "p",
-        "aliases": ["P", "p"],
-        "extensions": [".p"],
+        "aliases": [
+          "P",
+          "p"
+        ],
+        "extensions": [
+          ".p"
+        ],
         "icon": {
           "light": "./assets/icon.png",
           "dark": "./assets/icon.png"
