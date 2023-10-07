@@ -108,7 +108,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.p",
-					"match": "\\b(and|or|not|if|unless|else|while|until|every|is|break|next|mut|return|fn)\\b"
+					"match": "\\b(and|or|not|if|unless|else|while|until|every|is|in|break|next|mut|return|fn)\\b"
 				},
 				{
           "name": "keyword.p",
@@ -124,7 +124,7 @@
         },
         {
           "name": "entity.name.tag",
-          "match": "\\b(null, undefined)\\b"
+          "match": "\\b(null|undefined)\\b"
         }
 			]
 		},
