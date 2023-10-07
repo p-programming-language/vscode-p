@@ -108,11 +108,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.p",
-					"match": "\\b(and|or|not|if|unless|else|while|until|break|next|mut|return|fn)\\b"
+					"match": "\\b(and|or|not|if|unless|else|while|until|every|is|break|next|mut|return|fn)\\b"
 				},
 				{
           "name": "keyword.p",
-          "match": "\\b(enum|class|interface|mixin|public|protected|static)\\b"
+          "match": "\\b(typeof|enum|class|interface|mixin|public|protected|static)\\b"
         },
 				{
           "name": "keyword.type.p",
