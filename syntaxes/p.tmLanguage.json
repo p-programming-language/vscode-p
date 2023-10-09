@@ -310,7 +310,7 @@
 					"name": "keyword.operator.brackets.p"
 				},
         {
-					"match": "(\\.|::)",
+					"match": "(\\.)",
 					"name": "keyword.operator.access.p"
 				},
         {
@@ -326,7 +326,7 @@
 					"name": "keyword.operator.comparison.p"
 				},
 				{
-					"match": "(!|&|[|]|~)",
+					"match": "(!|&|[|]|~|\\@)",
 					"name": "keyword.operator.logical.p"
 				}
       ]
