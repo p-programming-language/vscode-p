@@ -295,7 +295,7 @@
         },
 				{
 					"name": "support.function",
-					"match": "\\b(println|readln|eval)\\b"
+					"match": "\\b(println|eval)\\b"
 				}
       ]
     },
