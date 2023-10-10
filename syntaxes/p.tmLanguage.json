@@ -108,11 +108,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.p",
-					"match": "\\b(new|private|protected|static|use|from|switch|when|and|or|not|if|unless|else|while|until|every|is|in|break|next|mut|return|fn)\\b"
+					"match": "\\b(new|use|from|switch|when|and|or|not|if|unless|else|while|until|every|is|in|break|next|mut|return|fn)\\b"
 				},
 				{
           "name": "keyword.p",
-          "match": "\\b(default|typeof|enum|class|interface|mixin|public|protected|static)\\b"
+          "match": "\\b(default|typeof|enum|class|interface|mixin|private|protected|static)\\b"
         },
 				{
           "name": "keyword.type.p",
@@ -326,7 +326,7 @@
 					"name": "keyword.operator.comparison.p"
 				},
 				{
-					"match": "(!|&|[|]|~|\\@|?|:)",
+					"match": "(!|&|[|]|~|\\@|\\?|\\:)",
 					"name": "keyword.operator.logical.p"
 				}
       ]
