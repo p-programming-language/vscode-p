@@ -108,7 +108,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.p",
-					"match": "\\b(use|from|switch|when|and|or|not|if|unless|else|while|until|every|is|in|break|next|mut|return|fn)\\b"
+					"match": "\\b(new|private|protected|static|use|from|switch|when|and|or|not|if|unless|else|while|until|every|is|in|break|next|mut|return|fn)\\b"
 				},
 				{
           "name": "keyword.p",
@@ -295,7 +295,7 @@
         },
 				{
 					"name": "support.function",
-					"match": "\\b(println|eval)\\b"
+					"match": "\\b(eval)\\b"
 				}
       ]
     },
@@ -326,7 +326,7 @@
 					"name": "keyword.operator.comparison.p"
 				},
 				{
-					"match": "(!|&|[|]|~|\\@)",
+					"match": "(!|&|[|]|~|\\@|?|:)",
 					"name": "keyword.operator.logical.p"
 				}
       ]
